@@ -7,4 +7,4 @@ There's a weird issue with Nuget packages and the Z3 reference. When you restore
 
 
 # Screenshots
-![alt text](Screenshot - modelling GUI.png "Modeling GUI")
+![screenshot - modelling gui](https://user-images.githubusercontent.com/20491406/43607215-de3d6556-969d-11e8-8fbb-40ae938d4c6f.png)
