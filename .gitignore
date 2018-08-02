@@ -6,8 +6,10 @@
 **/ModellingTool/obj
 **/ModellingTool/bin
 **/ConfigurationTool/**/*.js
+**/ConfigurationTool/**/*.js.map
 **/ConfigurationTool/obj
 **/ConfigurationTool/bin
+**/ConfigurationTool/typings
 **/ConfigurationTool/node_modules
 **/Core/Core/bin
 **/Core/Core/obj
