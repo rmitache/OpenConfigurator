@@ -1,0 +1,19 @@
+﻿<div>
+    <div class="PropertyDiv">
+        <span class="label-Small">Type:</span>
+        <select class="Dropdown" data-bind="options: CompositionRuleTypes,
+                                            value: CompositionRuleType,
+                                            optionsText: 'name',
+                                            optionsValue: 'value'">
+        </select>
+    </div>
+    <div class="PropertyDiv">
+        <span class="label-Small">Name:</span>
+        <input class="Textbox" type="text" data-bind="value: Name, valueUpdate: 'afterkeydown'" />
+    </div>
+    <div class="PropertyDiv">
+        <span class="label-Small">Identifier:</span>
+        <input class="Textbox" type="text" data-bind="value: Identifier, valueUpdate: 'afterkeydown'" />
+    </div>
+    <div style="clear: both"></div>
+</div>

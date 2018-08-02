@@ -1,0 +1,33 @@
+﻿<div id="FeatureInnerEditorDiv">
+    <div class="PropertyDiv">
+        <span class="label-Small">Name:</span>
+        <input id="NameTextbox" class="Textbox" type="text" data-bind="value: Name, valueUpdate: 'afterkeydown'" />
+    </div>
+    <div class="PropertyDiv">
+        <span class="label-Small">Identifier:</span>
+        <input class="Textbox" type="text" data-bind="value: Identifier, valueUpdate: 'afterkeydown'" />
+    </div>
+
+    <div id="AttributesSection">
+        <span class="headerLabel">Attributes:</span>
+        <div class="iconButton-small" id="newAttributeButton" title="Add a new Attribute" data-bind="click: AddAttribute">
+            <img src="../../Content/Images/Icons/add.png" />
+        </div>
+        <div id="AttributeListContainer">
+            <span id="noDataLabel" data-bind="visible: Attributes().length == 0">There are no Attributes</span>
+            <div data-bind="foreach: Attributes">
+                <div class="listElem" data-bind="click: $root.SelectAttribute, attr: { selected: $data === $root.CurrentlySelectedAttribute() }">
+                    <span data-bind="text: Name"></span>
+                    <img data-bind="click: $root.RemoveAttribute" src="../../Content/Images/Icons/delete.png" />
+                </div>
+            </div>
+        </div>
+
+
+        <div id="attributeEditorContainer">
+        </div>
+    </div>
+
+
+    <div style="clear: both"></div>
+</div>
