@@ -1,0 +1,250 @@
+﻿/*Templates and layout**************************************************************************/
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background: #F8F8F8;
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+    -ms-scrollbar-face-color: #F4F4F4;
+    -ms-scrollbar-shadow-color: #F4F4F4;
+    height: 100%;
+    width: 100%;
+}
+
+#frame {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+    #frame #headerArea #topMenuBar {
+        width: 100%;
+        height: 40px;
+        background: #62605E;
+    }
+
+        #frame #headerArea #topMenuBar #logo {
+            float: left;
+            margin-top: 1px;
+            padding-left: 14px;
+            width: 188px;
+            height: 37px;
+            background: url(images/layout/logo2.png) no-repeat center top;
+        }
+
+        #frame #headerArea #topMenuBar #topMenu {
+        }
+
+    #frame #bodyArea {
+        width: 100%;
+        height: calc(100% - 40px);
+    }
+
+    #frame .configuration-editor {
+        float: left;
+        width: calc(100% - 40px);
+        margin-left: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+    }
+/***********************************************************************************************/
+/*UIComponents *********************************************************************************/
+
+/*MenuBar*/
+.ui-menu {
+    width: 300px;
+    float: left;
+    margin-top: 4px;
+    margin-left: -8px;
+    height: 28px;
+    list-style-type: none;
+    margin: 0;
+    margin-bottom: 2px;
+    padding: 0;
+}
+
+.ui-menubar {
+    border: none;
+    width: auto;
+    background: transparent;
+    padding-top: 2px;
+    padding-bottom: 6px;
+}
+
+    .ui-menubar .ui-menuitem {
+        width: auto;
+        clear: none;
+        background: transparent;
+        border-radius: unset;
+        margin: 0;
+    }
+
+.ui-menu-child {
+    padding: 0 !important;
+    border: none;
+}
+
+.ui-menubar .ui-menuitem a {
+    display: block;
+    font-family: Arial;
+    letter-spacing: 2.8px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: default;
+    color: #EBEBEB;
+    text-decoration: none;
+    padding: 8px;
+}
+
+.ui-menu .ui-menu-parent .ui-submenu-icon {
+    display: none;
+}
+
+.ui-menu-list {
+    background: transparent;
+    border: none;
+    border-radius: unset;
+    padding: 0;
+    box-shadow: none;
+}
+
+.ui-menubar .ui-menuitem-active a {
+    background: #464646;
+    border-radius: unset;
+}
+
+    .ui-menubar .ui-menuitem-active a:hover {
+        color: #cde753;
+        background: black;
+    }
+
+
+
+
+/***********************************************************************************************/
+/*Controls**************************************************************************************/
+.headerLabel {
+    font-size: 11px;
+    color: black;
+    letter-spacing: 1.2px;
+    font-weight: bold;
+}
+
+.label-Small {
+    font-size: 10px;
+    color: #696969;
+}
+
+.Label {
+    font-size: 12px;
+    color: #696969;
+}
+
+.Textbox {
+    border: 1px solid #E2E2E2;
+    height: 26px;
+    font-size: 14px;
+    border-radius: 3px;
+}
+
+    .Textbox:focus, .Textarea:focus {
+        border: 1px solid #E9E9E9;
+    }
+
+.validationElement {
+    border: solid 1px red !important;
+}
+
+.button {
+    height: 22px;
+    float: left;
+    padding: 4px 10px 4px 10px;
+    border: solid 1px transparent;
+    cursor: pointer;
+    background: #EFEFEF;
+    border-radius: 6px;
+}
+
+    .button:hover {
+        background: #D0F086;
+    }
+
+    .button span {
+        font-size: 11px;
+        font-family: Arial;
+        letter-spacing: 1.2px;
+        font-weight: bold;
+    }
+
+    .button[disabled] {
+        background: #EFEFEF;
+        cursor: default;
+    }
+
+        .button[disabled]:hover {
+            background: #EFEFEF;
+        }
+
+        .button[disabled] span {
+            color: #A8A8A8;
+        }
+
+.iconButton {
+    width: 22px;
+    height: 22px;
+    float: left;
+    padding: 5px;
+    border: solid 1px transparent;
+    cursor: pointer;
+    background: #EFEFEF;
+    border-radius: 6px;
+    margin-left: 1px;
+}
+
+    .iconButton:hover {
+        background: #D0F086;
+    }
+
+.iconButton-active {
+    background: #BCEA51;
+}
+
+.iconButton[disabled] {
+    background: #EFEFEF;
+    cursor: default;
+}
+
+    .iconButton[disabled]:hover {
+        background: #EFEFEF;
+    }
+
+    .iconButton[disabled] img {
+        opacity: 0.1;
+    }
+
+.iconButton-small {
+    width: 16px;
+    height: 16px;
+    float: left;
+    padding: 3px;
+    border: solid 1px transparent;
+    cursor: pointer;
+    background: #EFEFEF;
+    border-radius: 6px;
+}
+
+    .iconButton-small:hover {
+        background: #D0F086;
+    }
+
+.iconButton-small-active {
+    background: #BCEA51;
+}
+/***********************************************************************************************/
+
+

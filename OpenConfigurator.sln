@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenConfigurator.Core.XmlDA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenConfigurator.Core", "Core\OpenConfigurator.Core.csproj", "{BFF64CDC-6826-4640-BB8B-4DBB45BDD77B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenConfigurator.ModellingTool", "ModellingTool\OpenConfigurator.ModellingTool.csproj", "{17AA0B6C-7F43-4AF4-B757-30D9144BD3EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenConfiguration.ConfigurationTool", "ConfigurationTool\OpenConfiguration.ConfigurationTool.csproj", "{408B5C52-D976-4661-A3F3-06D805049D11}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{BFF64CDC-6826-4640-BB8B-4DBB45BDD77B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFF64CDC-6826-4640-BB8B-4DBB45BDD77B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFF64CDC-6826-4640-BB8B-4DBB45BDD77B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{17AA0B6C-7F43-4AF4-B757-30D9144BD3EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{17AA0B6C-7F43-4AF4-B757-30D9144BD3EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{17AA0B6C-7F43-4AF4-B757-30D9144BD3EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{17AA0B6C-7F43-4AF4-B757-30D9144BD3EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{408B5C52-D976-4661-A3F3-06D805049D11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{408B5C52-D976-4661-A3F3-06D805049D11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{408B5C52-D976-4661-A3F3-06D805049D11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{408B5C52-D976-4661-A3F3-06D805049D11}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
