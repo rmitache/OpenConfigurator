@@ -51,33 +51,7 @@ namespace OpenConfigurator.ConfigurationTool.WebUI
                     });
 
 
-            // DI configuration------------------------------------------------------------------------------------------------------------
             var containerBuilder = new ContainerBuilder();
-
-            //// WebUI
-            //var webUIAssembly = Assembly.GetExecutingAssembly();
-            //containerBuilder.RegisterAssemblyTypes(webUIAssembly).Where(t => t.Name.EndsWith("Controller")).InstancePerLifetimeScope();
-            //containerBuilder.RegisterType<WebSecurityManager>()
-            //   .AsSelf()
-            //   .InstancePerLifetimeScope();
-
-
-            //// BLL
-            //Assembly bllAssembly = typeof(BLL.DomainModel.Factors.Medicine.BLOs.MedicineFactorRecord).Assembly;
-            //containerBuilder.RegisterAssemblyTypes(bllAssembly)
-            //    .Where(t => t.Name.EndsWith("Engine") || t.Name.EndsWith("Service") || t.Name.EndsWith("Factory"))
-            //    .AsImplementedInterfaces()
-            //    .InstancePerDependency();
-
-            //// DAL
-            //Assembly dalAssembly = typeof(MedicineTypeRepository).Assembly;
-            //containerBuilder.RegisterAssemblyTypes(dalAssembly)
-            //    .Where(t => t.Name.EndsWith("Repository"))
-            //    .AsImplementedInterfaces()
-            //    .InstancePerDependency();
-            //containerBuilder.RegisterType<DataEntitiesContext>()
-            //    .InstancePerDependency();
-            ////-----------------------------------------------------------------------------------------------------------------------------
 
             containerBuilder.Populate(services);
             var container = containerBuilder.Build();
@@ -113,12 +87,16 @@ namespace OpenConfigurator.ConfigurationTool.WebUI
                     name: "default",
                 template: "{controller=MainPage}/{action=Index}");
 
+                routes.MapRoute(
+                name: "DefaultApi",
+                template: "api/{controller}/{action}");
+
                 routes.MapSpaFallbackRoute(
                     name: "spa-fallback",
                     defaults: new { controller = "MainPage", action = "Index" });
             });
 
-
+            OpenConfigurator.Core.AutoMapperConfiguration.Configure();
 
         }
     }

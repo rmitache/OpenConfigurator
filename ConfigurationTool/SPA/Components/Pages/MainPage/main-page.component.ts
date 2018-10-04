@@ -21,9 +21,9 @@ export class MainPageComponent  {
     // Initialize
     ngOnInit() {
        
-        //this.mainPageService.GetConfigurationInstance()
-        //    .then((configInstanceCLO) => {
-        //        this.configurationEditorInstance.LoadConfigurationInstance(configInstanceCLO);
-        //    });
+        this.mainPageService.GetConfigurationInstance()
+            .then((configInstanceCLO) => {
+                this.configurationEditorInstance.LoadConfigurationInstance(configInstanceCLO);
+            });
     }
 }
