@@ -11,7 +11,7 @@
 **/ConfigurationTool/bin
 **/ConfigurationTool/typings
 **/ConfigurationTool/node_modules
-**/ConfigurationTool/wwwroot
+**/ConfigurationTool/scripts
 **/Core/Core/bin
 **/Core/Core/obj
 **/Core/XmlDAL/bin

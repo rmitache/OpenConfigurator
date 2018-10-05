@@ -9,6 +9,8 @@ using System.IO;
 using System.Xml;
 using System.Reflection;
 using System.Net;
+using OpenConfigurator.Core.Configuration.BLOManagers;
+using OpenConfigurator.Core.Configuration.BLOs;
 
 namespace OpenConfigurator.ModellingTool.WebUI.Controllers
 {
@@ -16,6 +18,10 @@ namespace OpenConfigurator.ModellingTool.WebUI.Controllers
     {
         public ActionResult Index()
         {
+
+            //ConfigurationInstanceManager configurationInstanceManager = new ConfigurationInstanceManager("");
+            //ConfiguratorSession configSession = configurationInstanceManager.CreateConfiguratorSession(null);
+
             return View();
         }
     }
