@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Http;
 using System.Web.Mvc;
 
 namespace OpenConfigurator.Controllers
@@ -24,7 +25,7 @@ namespace OpenConfigurator.Controllers
         }
 
         // API methods 
-        [HttpGet]
+        [System.Web.Http.HttpGet]
         public JsonResult GetConfigurationInstance(string modelName)
         {
             // Get the FeatureModel
@@ -43,12 +44,12 @@ namespace OpenConfigurator.Controllers
             //
             return Json(configSession.configurationInstance, JsonRequestBehavior.AllowGet);
         }
-        [HttpPost]
-        public Dictionary<string, object> ToggleFeatureSelection(/*[FromBody]*/ string featureID)
+        [System.Web.Http.HttpPost]
+        public JsonResult ToggleFeatureSelection([FromBody] FeatureIDModel model)
         {
             // Get the ConfiguratorSession from the session state and Toggle the value
             ConfiguratorSession configSession = (ConfiguratorSession)HttpContext.Session["configuratorSession"];
-            List<FeatureSelection> changedFeatureSelections = configSession.ToggleFeatureAsUser(featureID);
+            List<FeatureSelection> changedFeatureSelections = configSession.ToggleFeatureAsUser(model.FeatureID);
 
 
             // Return a dictionary with changes for each FeatureSelection
@@ -76,9 +77,9 @@ namespace OpenConfigurator.Controllers
                 changesDictionary.Add(changedFeatureSelection.FeatureIdentifier, featureSelectionChanges);
             }
 
-            return changesDictionary;
+            return Json(changesDictionary);
         }
-        [HttpPost]
+        [System.Web.Http.HttpPost]
         public void SaveConfigurationInstance()
         {
             // Get the ConfigurationInstance from the session
@@ -91,6 +92,12 @@ namespace OpenConfigurator.Controllers
             // Save it to file
             ConfigurationInstanceManager manager = new ConfigurationInstanceManager(_configurationInstanceFolderPath);
             manager.SaveConfigurationInstance(configSession.configurationInstance);
+        }
+
+
+        public class FeatureIDModel
+        {
+            public string FeatureID { get; set; }
         }
     }
 }

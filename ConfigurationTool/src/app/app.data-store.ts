@@ -46,12 +46,15 @@ export class AppDataStore {
     }
     public ToggleFeatureSelection(featureID: string): Promise<any> {
 
-        let body = JSON.stringify(featureID);
         let options = new RequestOptions({ 'headers': this.headers });
 
-        let ajaxCall = this.http.post(this.globalAPIurl + "/ToggleFeatureSelection", body, options)
+        var model = {
+            FeatureID: featureID,
+        };
+
+        let ajaxCall = this.http.post(this.globalAPIurl + "/ToggleFeatureSelection", model, options)
             .toPromise()
-            .then((response) => {
+            .then((response) => { 
                 return response.json();
             });
 

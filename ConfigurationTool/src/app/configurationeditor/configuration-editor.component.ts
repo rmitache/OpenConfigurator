@@ -91,7 +91,7 @@ export class ConfigurationEditorComponent {
     // Event handlers
     private onFeatureSelectionElemClicked(featureSelectionCLO: FeatureSelectionCLO) {
         this.mainPageDataStore.ToggleFeatureSelection(featureSelectionCLO.FeatureIdentifier).then((changesDictionary) => {
-
+            
             // Update selectionStates of FeatureSelections
             for (var featureIdentifier in changesDictionary) {
                 let targetFeatureSelection: FeatureSelectionCLO = this.configInstanceCLO.FeatureSelections[featureIdentifier];
