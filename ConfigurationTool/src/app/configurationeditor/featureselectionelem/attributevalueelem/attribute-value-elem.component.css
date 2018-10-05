@@ -1,0 +1,22 @@
+﻿.attribute-value-elem {
+    float: left;
+    clear: both;
+    padding:5px;
+    overflow:visible;; 
+}
+.attribute-name {
+    font-size:9px;
+    font-family:Arial;
+    letter-spacing:1px;
+    color:gray;
+    text-overflow: ellipsis;
+}
+.value-textbox {
+    width:95%;
+    border:solid 1px #c5d89e;
+    background-color:white;
+    padding-left:5px;
+}
+.value-label {
+    color:#999999;
+}

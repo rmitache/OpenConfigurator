@@ -1,0 +1,16 @@
+﻿<div class="elem-wrapper">
+    <div class="connection-div" [style.width]="30*NestingLevel + 'px'">
+        <div  class="connection-tracer">
+
+        </div>
+
+    </div>
+    <div class="group-elem">
+        <feature-selection-elem *ngFor="let innerFeatureSelection of GroupCLO.InnerFeatureSelections" 
+                                (Clicked)="onFeatureSelectionElemClicked($event)"
+                                [FeatureSelectionCLO]="innerFeatureSelection" 
+                                [NestingLevel]="0">
+
+        </feature-selection-elem>
+    </div>
+</div>

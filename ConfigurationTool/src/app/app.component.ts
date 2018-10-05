@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
-import { CLOFactoryService } from 'core/CLOFactory/clo-factory.service';
+import { CLOFactoryService } from 'core/clofactory/clo-factory.service';
 import { AppDataStore } from './app.data-store';
+import { ConfigurationEditorComponent } from './ConfigurationEditor/configuration-editor.component';
 
 
 
@@ -11,7 +12,7 @@ import { AppDataStore } from './app.data-store';
     providers: [AppDataStore, CLOFactoryService]
 })
 export class AppComponent {
-    //@ViewChild(ConfigurationEditorComponent) private configurationEditorInstance: ConfigurationEditorComponent;
+    @ViewChild(ConfigurationEditorComponent) private configurationEditorInstance: ConfigurationEditorComponent;
 
     // Constructor
     constructor(private appDataStore: AppDataStore) { }
@@ -22,7 +23,7 @@ export class AppComponent {
         // 
         this.appDataStore.GetConfigurationInstance()
             .then((configInstanceCLO) => {
-                //this.configurationEditorInstance.LoadConfigurationInstance(configInstanceCLO);
+                this.configurationEditorInstance.LoadConfigurationInstance(configInstanceCLO);
             });
     }
 }

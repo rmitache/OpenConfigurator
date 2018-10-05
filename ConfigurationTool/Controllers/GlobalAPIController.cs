@@ -44,7 +44,7 @@ namespace OpenConfigurator.Controllers
             return Json(configSession.configurationInstance, JsonRequestBehavior.AllowGet);
         }
         [HttpPost]
-        public Dictionary<string, object> ToggleFeatureSelection(string featureID)
+        public Dictionary<string, object> ToggleFeatureSelection(/*[FromBody]*/ string featureID)
         {
             // Get the ConfiguratorSession from the session state and Toggle the value
             ConfiguratorSession configSession = (ConfiguratorSession)HttpContext.Session["configuratorSession"];

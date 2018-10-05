@@ -1,8 +1,8 @@
 import { Injectable, Inject } from '@angular/core';
 import { Http, Response, Request, URLSearchParams, Headers, RequestOptions } from '@angular/http';
 
-import { CLOFactoryService } from 'core/CLOFactory/clo-factory.service';
-import { ConfigurationInstanceCLO } from 'core/CLOFactory/clos';
+import { CLOFactoryService } from 'core/clofactory/clo-factory.service';
+import { ConfigurationInstanceCLO } from 'core/clofactory/clos';
 import { debug } from 'util';
 
 
@@ -38,7 +38,6 @@ export class AppDataStore {
             .then((blo) => {
 
                 // Convert the blo to a corresponding clo 
-                debugger;
                 let clo: ConfigurationInstanceCLO = this.cloFactory.Convert_ToCLO(ConfigurationInstanceCLO.name, blo) as ConfigurationInstanceCLO;
                 return clo;
             });

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
-import { CLOFactoryService } from './CLOFactory/clo-factory.service';
+import { CLOFactoryService } from './clofactory/clo-factory.service';
 
 
 
