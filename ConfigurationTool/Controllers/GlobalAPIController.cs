@@ -25,7 +25,7 @@ namespace OpenConfigurator.Controllers
 
         // API methods 
         [HttpGet]
-        public ConfigurationInstance GetConfigurationInstance(string modelName)
+        public JsonResult GetConfigurationInstance(string modelName)
         {
             // Get the FeatureModel
             ModelManager manager = new ModelManager(_modelFolderPath);
@@ -41,7 +41,7 @@ namespace OpenConfigurator.Controllers
 
 
             //
-            return configSession.configurationInstance;
+            return Json(configSession.configurationInstance, JsonRequestBehavior.AllowGet);
         }
         [HttpPost]
         public Dictionary<string, object> ToggleFeatureSelection(string featureID)

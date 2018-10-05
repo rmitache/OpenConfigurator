@@ -18,7 +18,6 @@ export class AppComponent {
 
     // Initialize
     ngOnInit() {
-        alert('wtf');
 
         // 
         this.appDataStore.GetConfigurationInstance()

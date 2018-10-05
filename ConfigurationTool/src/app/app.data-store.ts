@@ -3,6 +3,7 @@ import { Http, Response, Request, URLSearchParams, Headers, RequestOptions } fro
 
 import { CLOFactoryService } from 'core/CLOFactory/clo-factory.service';
 import { ConfigurationInstanceCLO } from 'core/CLOFactory/clos';
+import { debug } from 'util';
 
 
 @Injectable()
@@ -37,6 +38,7 @@ export class AppDataStore {
             .then((blo) => {
 
                 // Convert the blo to a corresponding clo 
+                debugger;
                 let clo: ConfigurationInstanceCLO = this.cloFactory.Convert_ToCLO(ConfigurationInstanceCLO.name, blo) as ConfigurationInstanceCLO;
                 return clo;
             });
