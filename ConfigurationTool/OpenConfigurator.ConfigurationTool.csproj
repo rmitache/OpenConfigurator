@@ -125,6 +125,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\GlobalAPIController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -132,11 +133,21 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="favicon.ico" />
+    <Content Include="Content\Images\Controls\checked-disabled.png" />
+    <Content Include="Content\Images\Controls\checked.png" />
+    <Content Include="Content\Images\Controls\dashed-connection.png" />
+    <Content Include="Content\Images\Controls\deselected-disabled.png" />
+    <Content Include="Content\Images\Controls\deselected.png" />
+    <Content Include="Content\Images\Controls\progress.gif" />
+    <Content Include="Content\Images\Controls\unchecked.png" />
+    <Content Include="Content\Images\Layout\logo2.png" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="angular.json" />
+    <Content Include="ModelFiles\ABTesting.xml" />
     <Content Include="package.json" />
+    <Content Include="ConfigurationFiles\ABTesting.cfx" />
+    <Content Include="ConfigurationFiles\Laptop.cfx" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml">
       <SubType>Designer</SubType>
     </None>
@@ -151,8 +162,6 @@
     <Content Include="Scripts\libs\vendor.js" />
     <Content Include="src\app\app.component.css" />
     <Content Include="src\app\app.component.html" />
-    <Content Include="src\app\gitrepos\gitrepos.component.css" />
-    <Content Include="src\app\gitrepos\gitrepos.component.html" />
     <Content Include="src\favicon.ico" />
     <Content Include="src\index.html" />
     <Content Include="src\karma.conf.js" />
@@ -188,14 +197,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="src\app\app.component.spec.ts" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
-    <TypeScriptCompile Include="src\app\git-repo-info.ts" />
-    <TypeScriptCompile Include="src\app\github.service.spec.ts" />
-    <TypeScriptCompile Include="src\app\github.service.ts" />
-    <TypeScriptCompile Include="src\app\gitrepos\gitrepos.component.spec.ts" />
-    <TypeScriptCompile Include="src\app\gitrepos\gitrepos.component.ts" />
+    <TypeScriptCompile Include="src\app\app.data-store.ts" />
+    <TypeScriptCompile Include="src\core\CLOFactory\clo-factory.service.ts" />
+    <TypeScriptCompile Include="src\core\CLOFactory\clos.ts" />
+    <TypeScriptCompile Include="src\core\core.module.ts" />
     <TypeScriptCompile Include="src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="src\environments\environment.ts" />
     <TypeScriptCompile Include="src\main.ts" />
@@ -205,6 +212,7 @@
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -11,7 +11,7 @@ namespace OpenConfigurator.Controllers
     {
         public ActionResult Index()
         {
-            var x = new SolverContext(null);
+            //var x = new SolverContext(null);
             return View();
         }
     }

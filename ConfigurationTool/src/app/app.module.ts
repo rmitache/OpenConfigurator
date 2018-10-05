@@ -2,15 +2,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { GitreposComponent } from './gitrepos/gitrepos.component';
+import { CoreModule } from 'core/core.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GitreposComponent
+    
   ],
   imports: [
-      BrowserModule, HttpClientModule
+      BrowserModule,
+      HttpClientModule,
+      CoreModule
   ],
   providers: [],
     bootstrap: [AppComponent]

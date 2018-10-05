@@ -4,7 +4,7 @@
     "./src"
   ],
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "./src",
     "outDir": "./scripts/out-tsc",
     "sourceMap": true,
     "declaration": false,
