@@ -4,6 +4,7 @@ using OpenConfigurator.Core.Configuration.BLOs;
 using OpenConfigurator.Core.Modelling.BLOManagers;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -24,13 +25,13 @@ namespace OpenConfigurator.Controllers
             _configurationInstanceFolderPath = System.Web.Hosting.HostingEnvironment.MapPath("~/ConfigurationFiles/");
         }
 
-        // API methods 
+        // API methods (unused currently)
         [System.Web.Http.HttpGet]
         public JsonResult GetConfigurationInstance(string modelName)
         {
             // Get the FeatureModel
             ModelManager manager = new ModelManager(_modelFolderPath);
-            Core.Modelling.BLOs.Model targetModel = manager.GetModelByName(modelName);
+            Core.Modelling.BLOs.Model targetModel = manager.GetModelByFileNameInFolder(modelName);
 
             // Create a ConfiguratorSession and store it in the session
             ConfigurationInstanceManager configurationInstanceManager = new ConfigurationInstanceManager(_configurationInstanceFolderPath);
@@ -44,6 +45,50 @@ namespace OpenConfigurator.Controllers
             //
             return Json(configSession.configurationInstance, JsonRequestBehavior.AllowGet);
         }
+        [System.Web.Http.HttpPost]
+        public void SaveConfigurationInstance()
+        {
+            // Get the ConfigurationInstance from the session
+            ConfiguratorSession configSession = (ConfiguratorSession)HttpContext.Session["configuratorSession"];
+            if (configSession == null)
+            {
+                throw new System.Exception("ConfiguratorSession not available anymore");
+            }
+
+            // Save it to file
+            ConfigurationInstanceManager manager = new ConfigurationInstanceManager(_configurationInstanceFolderPath);
+            manager.SaveConfigurationInstance(configSession.configurationInstance);
+        }
+
+
+
+        // API methods in use
+        [System.Web.Http.HttpPost]
+        public JsonResult UploadModelFile()
+        {
+            try
+            {
+                // Get the model from the uploaded file
+                var file = Request.Files[0];
+                ModelManager manager = new ModelManager(_modelFolderPath);
+                Core.Modelling.BLOs.Model targetModel = manager.GetModelFromStream(file.InputStream);
+
+                // Create a ConfiguratorSession and store it in the session
+                ConfigurationInstanceManager configurationInstanceManager = new ConfigurationInstanceManager(_configurationInstanceFolderPath);
+                ConfiguratorSession configSession = configurationInstanceManager.CreateConfiguratorSession(targetModel);
+                HttpContext.Session["configuratorSession"] = configSession;
+
+                // Toggle the root feature, as an initial starting point 
+                configSession.ToggleFeatureAsUser(configSession.configurationInstance.RootFeatureSelection.FeatureIdentifier);
+
+                return Json(configSession.configurationInstance);
+            }
+            catch (System.Exception ex)
+            {
+                return Json("Upload Failed: " + ex.Message);
+            }
+        }
+
         [System.Web.Http.HttpPost]
         public JsonResult ToggleFeatureSelection([FromBody] FeatureIDModel model)
         {
@@ -79,21 +124,6 @@ namespace OpenConfigurator.Controllers
 
             return Json(changesDictionary);
         }
-        [System.Web.Http.HttpPost]
-        public void SaveConfigurationInstance()
-        {
-            // Get the ConfigurationInstance from the session
-            ConfiguratorSession configSession = (ConfiguratorSession)HttpContext.Session["configuratorSession"];
-            if (configSession == null)
-            {
-                throw new System.Exception("ConfiguratorSession not available anymore");
-            }
-
-            // Save it to file
-            ConfigurationInstanceManager manager = new ConfigurationInstanceManager(_configurationInstanceFolderPath);
-            manager.SaveConfigurationInstance(configSession.configurationInstance);
-        }
-
 
         public class FeatureIDModel
         {

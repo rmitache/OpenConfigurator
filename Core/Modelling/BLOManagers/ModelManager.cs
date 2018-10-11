@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using OpenConfigurator.Core.Modelling.BLOs;
 using OpenConfigurator.Core.XmlDAL.ModelFile.Repositories;
+using System.IO;
 
 namespace OpenConfigurator.Core.Modelling.BLOManagers
 {
@@ -24,10 +25,17 @@ namespace OpenConfigurator.Core.Modelling.BLOManagers
             // Save it
             _modelRepository.SaveModel(dataEntity);
         }
-        public Model GetModelByName(string modelName)
+        public Model GetModelByFileNameInFolder(string fileName)
         {
             // Get DataEntity and convert to BLO
-            XmlDAL.ModelFile.DataEntities.Model dataEntity = _modelRepository.GetModel(modelName);
+            XmlDAL.ModelFile.DataEntities.Model dataEntity = _modelRepository.GetModel(fileName);
+            BLOs.Model modelBLO = Mapper.Map<BLOs.Model>(dataEntity);
+            return modelBLO;
+        }
+        public Model GetModelFromStream(Stream modelFileStream)
+        {
+            // Get DataEntity and convert to BLO
+            XmlDAL.ModelFile.DataEntities.Model dataEntity = _modelRepository.GetModel(modelFileStream);
             BLOs.Model modelBLO = Mapper.Map<BLOs.Model>(dataEntity);
             return modelBLO;
         }

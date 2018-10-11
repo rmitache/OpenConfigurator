@@ -7,6 +7,8 @@ import { ConfigurationEditorComponent } from './ConfigurationEditor/configuratio
 import { GroupElem } from './ConfigurationEditor/groupelem/group-elem.component';
 import { FeatureSelectionElem } from './ConfigurationEditor/featureselectionelem/feature-selection-elem.component';
 import { AttributeValueElem } from './configurationeditor/featureselectionelem/attributevalueelem/attribute-value-elem.component';
+import { ButtonModule } from 'primeng/button';
+import { FileUploadModule } from 'primeng/fileupload';
 
 @NgModule({
     declarations: [
@@ -14,12 +16,17 @@ import { AttributeValueElem } from './configurationeditor/featureselectionelem/a
         ConfigurationEditorComponent,
         GroupElem,
         FeatureSelectionElem,
-        AttributeValueElem
+        AttributeValueElem,
+        
     ],
     imports: [
         BrowserModule,
         HttpClientModule,
-        CoreModule
+        CoreModule,
+        FileUploadModule
+    ],
+    exports: [
+        FileUploadModule
     ],
     providers: [],
     bootstrap: [AppComponent],

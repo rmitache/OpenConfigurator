@@ -43,6 +43,15 @@ namespace OpenConfigurator.Core.XmlDAL.ModelFile.Repositories
 
             return dataEntity;
         }
+        public virtual Model GetModel(Stream featureModelStream)
+        {
+            // Read file
+            Model dataEntity;
+            DataContractSerializer ser = new DataContractSerializer(typeof(Model));
+            dataEntity = (Model)ser.ReadObject(featureModelStream);
+
+            return dataEntity;
+        }
         public string[] GetAllModelNames()
         {
             // Read files and create DataEntities

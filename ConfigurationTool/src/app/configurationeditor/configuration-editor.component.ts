@@ -65,27 +65,13 @@ export class ConfigurationEditorComponent {
 
     // Public methods
     public LoadConfigurationInstance(configInstanceCLO: ConfigurationInstanceCLO) {
-        this.configInstanceCLO = configInstanceCLO;
+        // Clear any existing controls from a previously loaded configurationInstance
+        this.configurationInstancePlaceHolder.clear();
 
+        // Load the given configurationInstance
+        this.configInstanceCLO = configInstanceCLO;
         this.createFeatureSelectionElem_recursive(this.configInstanceCLO.RootFeatureSelection, 0);
 
-
-
-
-
-        // Idea: logic for recursively creating FeatureSelectionElems and GroupElems here 
-        //  -> responsibility to create the nested tree structure will be with ConfigurationEditorComponent, and not with each Elem 
-        //  -> responsibility will be here, and not with each EL
-        // Create_FeatureSelectionElem_Or_GroupElem_Recursive() {
-        // - Create new Elem and pass it the respective CLO. Recurse for each of its children 
-        //
-
-        // Each FeatureSelectionElem 
-        // Each GroupElem contains a ref to a single GroupElem (no children)
-
-        // Issues:
-        // 1. If a FeatureSelectionElem/GroupElem knows nothing about the Children of its CLO, how will we hide those ? -> they need to be hidden if their
-        // immediate parent is UNSELECTED or DESELECTED
     }
 
     // Event handlers
