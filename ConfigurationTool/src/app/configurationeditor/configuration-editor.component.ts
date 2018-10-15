@@ -65,6 +65,7 @@ export class ConfigurationEditorComponent {
 
     // Public methods
     public LoadConfigurationInstance(configInstanceCLO: ConfigurationInstanceCLO) {
+
         // Clear any existing controls from a previously loaded configurationInstance
         this.configurationInstancePlaceHolder.clear();
 

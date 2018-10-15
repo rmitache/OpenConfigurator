@@ -22,7 +22,9 @@ namespace OpenConfigurator.Core.Configuration.BLOManagers.Parser
         public FeatureSelection Execute(CustomRule targetCustomRule)
         {
             // Get the expression
-            string expr = ">root.TotalScore=SumOf(>root.>descendants.ScoreValue)"; //TargetCustomFunction.Expression;
+            string expr = targetCustomRule.Expression; // OBS: an example for syntax: ">root.TotalScore=SumOf(>root.>descendants.ScoreValue)";
+            if (expr == null || expr == "")
+                return null;
 
             // Parse the expression
             AntlrInputStream inputToParse = new AntlrInputStream(expr);

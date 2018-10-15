@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenConfigurator.Core", "Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenConfigurator.ConfigurationTool", "ConfigurationTool\OpenConfigurator.ConfigurationTool.csproj", "{CF5E8BDA-9215-479F-AEE7-3BD0F0C7484E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenConfigurator.ModellingTool", "ModellingTool\OpenConfigurator.ModellingTool.csproj", "{17AA0B6C-7F43-4AF4-B757-30D9144BD3EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,14 @@ Global
 		{CF5E8BDA-9215-479F-AEE7-3BD0F0C7484E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CF5E8BDA-9215-479F-AEE7-3BD0F0C7484E}.Release|x86.ActiveCfg = Release|Any CPU
 		{CF5E8BDA-9215-479F-AEE7-3BD0F0C7484E}.Release|x86.Build.0 = Release|Any CPU
+		{17AA0B6C-7F43-4AF4-B757-30D9144BD3EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17AA0B6C-7F43-4AF4-B757-30D9144BD3EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17AA0B6C-7F43-4AF4-B757-30D9144BD3EE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{17AA0B6C-7F43-4AF4-B757-30D9144BD3EE}.Debug|x86.Build.0 = Debug|Any CPU
+		{17AA0B6C-7F43-4AF4-B757-30D9144BD3EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17AA0B6C-7F43-4AF4-B757-30D9144BD3EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17AA0B6C-7F43-4AF4-B757-30D9144BD3EE}.Release|x86.ActiveCfg = Release|Any CPU
+		{17AA0B6C-7F43-4AF4-B757-30D9144BD3EE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
