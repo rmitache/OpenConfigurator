@@ -68,7 +68,7 @@ namespace OpenConfigurator.Core.Configuration.BLOs
         }
 
         // Public methods
-        public List<FeatureSelection> GetAllChildrenFeatureSelections()
+        public List<FeatureSelection> GetAllChildrenFeatureSelectionsIncludingFromChildGroups()
         {
             List<FeatureSelection> children = new List<FeatureSelection>();
             childFeatureSelections.ForEach(childFeatureSel => children.Add(childFeatureSel));

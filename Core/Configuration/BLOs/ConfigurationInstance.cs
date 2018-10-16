@@ -38,13 +38,16 @@ namespace OpenConfigurator.Core.Configuration.BLOs
         // Private methods
         private List<FeatureSelection> GetDescendantFeatureSelections_Recursive(FeatureSelection target)
         {
-            List<FeatureSelection> childFeatureSelections = target.GetAllChildrenFeatureSelections();
-            foreach(FeatureSelection childFeatureSel in target.GetAllChildrenFeatureSelections())
-            {
-                childFeatureSelections.AddRange(childFeatureSel.GetAllChildrenFeatureSelections());
-            }
+            List<FeatureSelection> childFeatureSelections = target.GetAllChildrenFeatureSelectionsIncludingFromChildGroups();
+            List<FeatureSelection> descendants = new List<FeatureSelection>(childFeatureSelections);
 
-            return childFeatureSelections;
+
+            foreach (FeatureSelection childFeatureSel in childFeatureSelections)
+            {
+                descendants.AddRange(this.GetDescendantFeatureSelections_Recursive(childFeatureSel));
+            }
+            
+            return descendants;
         }
 
         // Constructor
@@ -69,7 +72,8 @@ namespace OpenConfigurator.Core.Configuration.BLOs
         }
         public List<FeatureSelection> GetDescendantFeatureSelections(FeatureSelection targetFeatureSelection)
         {
-            return GetDescendantFeatureSelections_Recursive(targetFeatureSelection);
+            var descendantFeatureSelections = GetDescendantFeatureSelections_Recursive(targetFeatureSelection);
+            return descendantFeatureSelections;
         }
     }
 }
