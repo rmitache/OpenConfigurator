@@ -34,6 +34,14 @@
     vertical-align:middle;
 
 }
+
+.attributeValuesPlaceHolder {
+    border-radius: 0 0 3px 3px;
+    background: #f8f8f8;
+    border: 1px solid #ededed;
+    width: 190px;
+}
+
 .feature-selection-elem .checkbox {
     width:18px;
     height:18px;
@@ -140,9 +148,3 @@
     cursor:default !important;
 }
 
-.attributeValuesPlaceHolder {
-    
-    border-radius:0 0 3px 3px;
-    background: #f8f8f8;
-    border: 1px solid #ededed;
-}
