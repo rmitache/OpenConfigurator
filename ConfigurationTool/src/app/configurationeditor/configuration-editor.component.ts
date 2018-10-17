@@ -81,31 +81,30 @@ export class ConfigurationEditorComponent {
     }
 
     // Event handlers
-    private onFeatureSelectionElemClicked(featureSelectionCLO: FeatureSelectionCLO) {
-        alert(featureSelectionCLO.FeatureName)
-        //this.mainPageDataStore.ToggleFeatureSelection(featureSelectionCLO.FeatureIdentifier).then((changesDictionary) => {
+    private onFeatureSelectionElemClicked = (featureSelectionCLO: FeatureSelectionCLO) =>  {
+        this.mainPageDataStore.ToggleFeatureSelection(featureSelectionCLO.FeatureIdentifier).then((changesDictionary) => {
 
-        //    // Update selectionStates of FeatureSelections
-        //    for (var featureIdentifier in changesDictionary) {
-        //        let targetFeatureSelection: FeatureSelectionCLO = this.configInstanceCLO.FeatureSelections[featureIdentifier];
+            // Update selectionStates of FeatureSelections
+            for (var featureIdentifier in changesDictionary) {
+                let targetFeatureSelection: FeatureSelectionCLO = this.configInstanceCLO.FeatureSelections[featureIdentifier];
 
-        //        // Update properties
-        //        targetFeatureSelection.SelectionState = changesDictionary[featureIdentifier].SelectionState;
-        //        targetFeatureSelection.Disabled = changesDictionary[featureIdentifier].Disabled;
-        //        targetFeatureSelection.ToggledByUser = changesDictionary[featureIdentifier].ToggledByUser;
+                // Update properties
+                targetFeatureSelection.SelectionState = changesDictionary[featureIdentifier].SelectionState;
+                targetFeatureSelection.Disabled = changesDictionary[featureIdentifier].Disabled;
+                targetFeatureSelection.ToggledByUser = changesDictionary[featureIdentifier].ToggledByUser;
 
-        //        // Update attribute values
-        //        let attrValChanges: Object[] = changesDictionary[featureIdentifier].AttributeValueChanges;
-        //        attrValChanges.forEach(attrValChange => {
+                // Update attribute values
+                let attrValChanges: Object[] = changesDictionary[featureIdentifier].AttributeValueChanges;
+                attrValChanges.forEach(attrValChange => {
 
-        //            let targetAttributeValue: AttributeValueCLO = targetFeatureSelection.AttributeValues.find((clo) => {
-        //                return clo.AttributeIdentifier === attrValChange["AttributeIdentifier"];
-        //            });
-        //            targetAttributeValue.Value = attrValChange["Value"];
-        //        });
+                    let targetAttributeValue: AttributeValueCLO = targetFeatureSelection.AttributeValues.find((clo) => {
+                        return clo.AttributeIdentifier === attrValChange["AttributeIdentifier"];
+                    });
+                    targetAttributeValue.Value = attrValChange["Value"];
+                });
 
-        //    }
-        //});
+            }
+        });
     }
     private onSaveButtonClicked() {
 
