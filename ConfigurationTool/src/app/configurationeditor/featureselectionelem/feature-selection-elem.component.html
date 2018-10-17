@@ -1,6 +1,6 @@
 ﻿<div class="elem-wrapper">
-    <div class="connection-div" [style.width]="30*NestingLevel + 'px'">
-        <div *ngIf="NestingLevel > 0" class="connection-tracer"></div>
+    <div class="connection-div">
+        <div *ngIf="IsRoot===false" class="connection-tracer"></div>
     </div>
     <div (click)="onClicked()" class="feature-selection-elem" attr.SelectionState="{{getSelectionState()}}" attr.Disabled="{{getDisabled()}}" attr.ToggledByUser="{{getToggledByUser()}}">
         <label>{{FeatureSelectionCLO.FeatureName}} </label>
@@ -12,5 +12,18 @@
         <div style="clear:both"></div>
     </div>
 
+
+    <div class="children-div">
+
+        <feature-selection-elem *ngFor="let childFeatureSel of FeatureSelectionCLO.ChildFeatureSelections"
+                                [OnClickHandler]="OnClickHandler"
+                                [FeatureSelectionCLO]="childFeatureSel">
+        </feature-selection-elem>
+
+        <group-elem *ngFor="let childGroup of FeatureSelectionCLO.ChildGroups"
+                                [OnClickHandler]="OnClickHandler"
+                                [GroupCLO]="childGroup">
+        </group-elem>
+    </div>
 </div>
 

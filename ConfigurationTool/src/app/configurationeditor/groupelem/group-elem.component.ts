@@ -9,12 +9,5 @@ import { GroupCLO, FeatureSelectionCLO } from 'core/clofactory/clos';
 })
 export class GroupElem {
     @Input() public GroupCLO: GroupCLO;
-    @Input() public NestingLevel: number; 
-    @Output() public InnerFeatureSelectionClicked = new EventEmitter();
-
-    // Event handlers
-    private onFeatureSelectionElemClicked(featureSelectionCLO: FeatureSelectionCLO) {
-
-        this.InnerFeatureSelectionClicked.emit(featureSelectionCLO);
-    }
+    @Input() public OnClickHandler: (clickedFeatureSel: FeatureSelectionCLO) => void;
 }

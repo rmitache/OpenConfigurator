@@ -4,14 +4,14 @@ import { FeatureSelectionCLO, FeatureSelectionStates } from 'core/clofactory/clo
 
 @Component({
     selector: 'feature-selection-elem',
-    templateUrl: "feature-selection-elem.component.html" ,
-    styleUrls: ['feature-selection-elem.component.css' ]
+    templateUrl: "feature-selection-elem.component.html",
+    styleUrls: ['feature-selection-elem.component.css']
 })
 export class FeatureSelectionElem implements OnInit {
     // Fields
-    @Input() public NestingLevel: number;
+    public IsRoot: boolean = false;
     @Input() public FeatureSelectionCLO: FeatureSelectionCLO;
-    @Output() public Clicked = new EventEmitter();
+    @Input() public OnClickHandler: (clickedFeatureSel: FeatureSelectionCLO) => void;
 
     // Private methods
     private getSelectionState() {
@@ -23,10 +23,11 @@ export class FeatureSelectionElem implements OnInit {
     private getToggledByUser() {
         return this.FeatureSelectionCLO.ToggledByUser === true;
     }
- 
+
 
     // Constructor
     constructor() {
+
     }
 
     // Init
@@ -37,7 +38,7 @@ export class FeatureSelectionElem implements OnInit {
     // Event handlers
     private onClicked() {
         if (this.FeatureSelectionCLO.Disabled !== true) {
-            this.Clicked.emit(this.FeatureSelectionCLO);
+            this.OnClickHandler(this.FeatureSelectionCLO);
         }
     }
 
