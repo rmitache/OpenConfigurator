@@ -9,14 +9,14 @@
     display:table-cell;
     vertical-align:top;
 }
-.connection-div .connection-tracer{
-    border-left:dotted 2px #EEEEEE;
-    border-bottom:dotted 2px #EEEEEE;
-    float:right;
-    width:12px;
-    height:17px;
-    padding-top:10px;
-}
+    .connection-div .connection-tracer {
+        border-left: solid 1px black;
+        border-bottom: solid 1px black;
+        float: right;
+        width: 12px;
+        height: 17px;
+        padding-top: 10px;
+    }
 
 .feature-selection-elem
 {
