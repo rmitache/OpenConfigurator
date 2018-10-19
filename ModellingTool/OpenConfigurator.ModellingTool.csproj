@@ -48,10 +48,6 @@
       <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="OpenConfigurator.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\CoreDLLOutput\OpenConfigurator.Core.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -265,6 +261,10 @@
     <Content Include="SPA\Main\MenuBar\MenuBar.html" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Core\OpenConfigurator.Core.csproj">
+      <Project>{bff64cdc-6826-4640-bb8b-4dbb45bdd77b}</Project>
+      <Name>OpenConfigurator.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\XmlDAL\OpenConfigurator.Core.XmlDAL.csproj">
       <Project>{ea1e5cf8-314e-4d22-bc58-5cfcae8ebb0c}</Project>
       <Name>OpenConfigurator.Core.XmlDAL</Name>

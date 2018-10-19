@@ -38,7 +38,7 @@ namespace OpenConfigurator.ModellingTool.WebUI.Controllers
         public Model GetModel(string modelName)
         {
             ModelManager manager = new ModelManager(modelFolderPath);
-            return manager.GetModelByName(modelName);
+            return manager.GetModelByFileNameInFolder(modelName);
         }
 
         [HttpGet]
