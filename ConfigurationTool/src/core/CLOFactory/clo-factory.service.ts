@@ -35,8 +35,8 @@ namespace SpecializedCLOFactories {
             let newCLO = new ConfigurationInstanceCLO();
             newCLO.ModelName = blo["ModelName"]; // primitive
             newCLO.RootFeatureSelection = this.cloConverter.Convert_ToCLO(FeatureSelectionCLO.name, blo["RootFeatureSelection"]) as FeatureSelectionCLO; // CLO
-
             newCLO.FeatureSelections = {};
+            newCLO.SMTText = blo["SMTText"];
             this.AddFeatureSelectionCLOToCollection_Recursive(newCLO.RootFeatureSelection, newCLO.FeatureSelections);
 
             return newCLO;

@@ -5,8 +5,8 @@ export interface iCLO {
 export class ConfigurationInstanceCLO implements iCLO {
     public ModelName: string;
     public FeatureSelections: { [key: string]: FeatureSelectionCLO };
-
     public RootFeatureSelection: FeatureSelectionCLO;
+    public SMTText: string;
 }
 export class FeatureSelectionCLO implements iCLO {
     public FeatureIdentifier: string;

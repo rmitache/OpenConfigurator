@@ -14,50 +14,7 @@ export class ConfigurationEditorComponent {
     // Fields 
     @ViewChild('configurationInstancePlaceHolder', { read: ViewContainerRef }) private configurationInstancePlaceHolder: ViewContainerRef;
     private configInstanceCLO: ConfigurationInstanceCLO;
-
-    //// Private methods
-    //private createFeatureSelectionElem_recursive(targetFeatureSelectionCLO: FeatureSelectionCLO, nestingLevel: number) {
-
-    //    // Create a FeatureSelectionElem 
-    //    let factory = this.componentFactoryResolver.resolveComponentFactory(FeatureSelectionElem);
-    //    let comp = this.configurationInstancePlaceHolder.createComponent(factory);
-    //    comp.instance.FeatureSelectionCLO = targetFeatureSelectionCLO;
-    //    comp.instance.Clicked
-    //        .subscribe((featureSelectionCLO: FeatureSelectionCLO) => {
-    //            this.onFeatureSelectionElemClicked(featureSelectionCLO);
-    //        });
-
-    //    // Create  elems for its children FeatureSelections
-    //    let childrenNestingLevel = nestingLevel + 1;
-    //    for (let childFeatureSelectionCLO of targetFeatureSelectionCLO.ChildFeatureSelections) {
-    //        this.createFeatureSelectionElem_recursive(childFeatureSelectionCLO, childrenNestingLevel);
-    //    }
-
-    //    // Create children Group elems
-    //    for (let childGroupCLO of targetFeatureSelectionCLO.ChildGroups) {
-    //        this.createGroupElem_recursive(childGroupCLO, childrenNestingLevel);
-    //    }
-    //}
-    //private createGroupElem_recursive(targetGroupCLO: GroupCLO, nestingLevel: number) {
-
-    //    // Create a GroupElem 
-    //    let factory = this.componentFactoryResolver.resolveComponentFactory(GroupElem);
-    //    let comp = this.configurationInstancePlaceHolder.createComponent(factory);
-    //    comp.instance.GroupCLO = targetGroupCLO;
-    //    comp.instance.NestingLevel = nestingLevel;
-    //    comp.instance.InnerFeatureSelectionClicked
-    //        .subscribe((featureSelectionCLO: FeatureSelectionCLO) => {
-    //            this.onFeatureSelectionElemClicked(featureSelectionCLO);
-    //        });
-
-    //    // Create children FeatureSelection elems for each innerFeatureSelection 
-    //    let childrenNestingLevel = nestingLevel + 1;
-    //    for (let innerFeatureSelectionCLO of targetGroupCLO.InnerFeatureSelections) {
-    //        for (let childFeatureSelectionCLO of innerFeatureSelectionCLO.ChildFeatureSelections) {
-    //            this.createFeatureSelectionElem_recursive(childFeatureSelectionCLO, childrenNestingLevel);
-    //        }
-    //    }
-    //}
+    private showSMTText = false;
 
     // Constructor
     public constructor(private componentFactoryResolver: ComponentFactoryResolver, private mainPageDataStore: AppDataStore) { }

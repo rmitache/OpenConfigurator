@@ -17,6 +17,15 @@ namespace OpenConfigurator.Core.Configuration.BLOManagers.Solver
         private Dictionary<string, Function> _functions = new Dictionary<string, Function>();
         private Dictionary<string, Assumption> _decisionAssumptions = new Dictionary<string, Assumption>();
 
+        // Properties
+        public string SMTText
+        {
+            get
+            {
+                return this._solver.ToString();
+            }
+        }
+
         // Private helper methods
         private static bool? ConvertToBool(Expr value)
         {
@@ -201,7 +210,7 @@ namespace OpenConfigurator.Core.Configuration.BLOManagers.Solver
 
                         BoolExpr IfAnyChildrenAreSelected = _context.MkGt(_context.MkAdd(intConversions.ToArray()), _context.MkInt(0));
 
-                        expr =_context.MkAnd(_context.MkImplies(IfAnyChildrenAreSelected, parentFeatureConstant.Expr as BoolExpr),
+                        expr = _context.MkAnd(_context.MkImplies(IfAnyChildrenAreSelected, parentFeatureConstant.Expr as BoolExpr),
                             _context.MkImplies(IfAnyChildrenAreSelected, sumValueConstraint),
                             _context.MkImplies(parentFeatureConstant.Expr as BoolExpr, sumValueConstraint));
                         break;
@@ -231,7 +240,7 @@ namespace OpenConfigurator.Core.Configuration.BLOManagers.Solver
             BoolExpr expr = null;
             switch (compRuleType)
             {
-                case  CompositionRuleTypes.Dependency:
+                case CompositionRuleTypes.Dependency:
                     {
                         expr = _context.MkImplies(firstFeatureConstant.Expr as BoolExpr, secondFeatureConstant.Expr as BoolExpr);
                         break;

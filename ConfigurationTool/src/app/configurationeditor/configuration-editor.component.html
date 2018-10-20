@@ -1,9 +1,19 @@
 ﻿<div class="configuration-editor">
 
-    <span class="modelName" *ngIf="configInstanceCLO">{{configInstanceCLO.ModelName}}</span>
-    <!--<button (click)="onSaveButtonClicked()" >Save Configuration</button>-->
-    <div #configurationInstancePlaceHolder class="configurationInstancePlaceHolder">
+    <div>
+        <span class="modelName" style="float:left" *ngIf="configInstanceCLO">{{configInstanceCLO.ModelName}}</span>
+        <button style="float:right" 
+                (click)="showSMTText=!showSMTText"
+                *ngIf="configInstanceCLO">Show/Hide SMT representation</button>
 
-        
+    </div>
+    
+    <!--<button (click)="onSaveButtonClicked()" >Save Configuration</button>-->
+
+    <div #configurationInstancePlaceHolder class="configurationInstancePlaceHolder">
+    </div>
+    <div *ngIf="configInstanceCLO && showSMTText" class="smt-text-placeholder">
+        <h2>SMT representation: </h2>
+        <span>{{configInstanceCLO.SMTText}}</span>
     </div>
 </div>

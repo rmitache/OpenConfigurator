@@ -34,6 +34,8 @@ namespace OpenConfigurator.Core.Configuration.BLOs
             get;
             set;
         }
+        public string SMTText { get; set; }
+
 
         // Private methods
         private List<FeatureSelection> GetDescendantFeatureSelections_Recursive(FeatureSelection target)

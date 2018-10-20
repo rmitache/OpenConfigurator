@@ -64,7 +64,7 @@ namespace OpenConfigurator.Controllers
 
         // API methods in use
         [System.Web.Http.HttpPost]
-        public JsonResult UploadModelFile()
+        public JsonResult UploadModelFile() // Uploads a Model file and then returns the ConfigurationInstance
         {
             try
             {
@@ -129,5 +129,6 @@ namespace OpenConfigurator.Controllers
         {
             public string FeatureID { get; set; }
         }
+        
     }
 }
