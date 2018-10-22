@@ -26,8 +26,7 @@ export class ConfigurationEditorComponent {
         // Load the given configurationInstance
         this.configurationInstancePlaceHolder.clear(); // clear any existing controls from a previously loaded configurationInstance
         this.configInstanceCLO = configInstanceCLO;
-        //this.createFeatureSelectionElem_recursive(this.configInstanceCLO.RootFeatureSelection, 0);
-
+        this.SMTDynamicText = '';
 
         // Create a FeatureSelectionElem for the root 
         let rootFeatureSel = this.configInstanceCLO.RootFeatureSelection;
