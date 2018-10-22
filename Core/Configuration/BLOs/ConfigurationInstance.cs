@@ -34,7 +34,7 @@ namespace OpenConfigurator.Core.Configuration.BLOs
             get;
             set;
         }
-        public string SMTText { get; set; }
+        public string SMTStaticText { get; set; }
 
 
         // Private methods

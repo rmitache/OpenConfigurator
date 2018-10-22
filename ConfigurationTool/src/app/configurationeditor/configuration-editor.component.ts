@@ -14,7 +14,8 @@ export class ConfigurationEditorComponent {
     // Fields 
     @ViewChild('configurationInstancePlaceHolder', { read: ViewContainerRef }) private configurationInstancePlaceHolder: ViewContainerRef;
     private configInstanceCLO: ConfigurationInstanceCLO;
-    private showSMTText = false;
+    private showSMTDynamic = true;
+    private SMTDynamicText: string;
 
     // Constructor
     public constructor(private componentFactoryResolver: ComponentFactoryResolver, private mainPageDataStore: AppDataStore) { }
@@ -39,19 +40,20 @@ export class ConfigurationEditorComponent {
 
     // Event handlers
     private onFeatureSelectionElemClicked = (featureSelectionCLO: FeatureSelectionCLO) =>  {
-        this.mainPageDataStore.ToggleFeatureSelection(featureSelectionCLO.FeatureIdentifier).then((changesDictionary) => {
+        this.mainPageDataStore.ToggleFeatureSelection(featureSelectionCLO.FeatureIdentifier).then((returnModel) => {
+            this.SMTDynamicText = returnModel.SMTDynamicText;
 
             // Update selectionStates of FeatureSelections
-            for (var featureIdentifier in changesDictionary) {
+            for (var featureIdentifier in returnModel.ChangesDictionary) {
                 let targetFeatureSelection: FeatureSelectionCLO = this.configInstanceCLO.FeatureSelections[featureIdentifier];
 
                 // Update properties
-                targetFeatureSelection.SelectionState = changesDictionary[featureIdentifier].SelectionState;
-                targetFeatureSelection.Disabled = changesDictionary[featureIdentifier].Disabled;
-                targetFeatureSelection.ToggledByUser = changesDictionary[featureIdentifier].ToggledByUser;
+                targetFeatureSelection.SelectionState = returnModel.ChangesDictionary[featureIdentifier].SelectionState;
+                targetFeatureSelection.Disabled = returnModel.ChangesDictionary[featureIdentifier].Disabled;
+                targetFeatureSelection.ToggledByUser = returnModel.ChangesDictionary[featureIdentifier].ToggledByUser;
 
                 // Update attribute values
-                let attrValChanges: Object[] = changesDictionary[featureIdentifier].AttributeValueChanges;
+                let attrValChanges: Object[] = returnModel.ChangesDictionary[featureIdentifier].AttributeValueChanges;
                 attrValChanges.forEach(attrValChange => {
 
                     let targetAttributeValue: AttributeValueCLO = targetFeatureSelection.AttributeValues.find((clo) => {

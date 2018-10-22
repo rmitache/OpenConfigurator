@@ -78,8 +78,8 @@ namespace OpenConfigurator.Controllers
                 ConfiguratorSession configSession = configurationInstanceManager.CreateConfiguratorSession(targetModel);
                 HttpContext.Session["configuratorSession"] = configSession;
 
-                // Toggle the root feature, as an initial starting point 
-                configSession.ToggleFeatureAsUser(configSession.configurationInstance.RootFeatureSelection.FeatureIdentifier);
+                //// Toggle the root feature, as an initial starting point 
+                //configSession.ToggleFeatureAsUser(configSession.configurationInstance.RootFeatureSelection.FeatureIdentifier);
 
                 return Json(configSession.configurationInstance);
             }
@@ -96,8 +96,7 @@ namespace OpenConfigurator.Controllers
             ConfiguratorSession configSession = (ConfiguratorSession)HttpContext.Session["configuratorSession"];
             List<FeatureSelection> changedFeatureSelections = configSession.ToggleFeatureAsUser(model.FeatureID);
 
-
-            // Return a dictionary with changes for each FeatureSelection
+            // Make a dictionary with changes for each FeatureSelection
             Dictionary<string, object> changesDictionary = new Dictionary<string, object>();
             foreach (FeatureSelection changedFeatureSelection in changedFeatureSelections)
             {
@@ -122,12 +121,21 @@ namespace OpenConfigurator.Controllers
                 changesDictionary.Add(changedFeatureSelection.FeatureIdentifier, featureSelectionChanges);
             }
 
-            return Json(changesDictionary);
+            // 
+            var returnModel = new ToggleFeatureReturnModel();
+            returnModel.ChangesDictionary = changesDictionary;
+            returnModel.SMTDynamicText = configSession.solverContext.GetSMTDynamicText;
+            return Json(returnModel);
         }
 
         public class FeatureIDModel
         {
             public string FeatureID { get; set; }
+        }
+        public class ToggleFeatureReturnModel
+        {
+            public Dictionary<string, object> ChangesDictionary { get; set; }
+            public string SMTDynamicText { get; set; }
         }
         
     }

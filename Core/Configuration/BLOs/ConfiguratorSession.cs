@@ -99,7 +99,7 @@ namespace OpenConfigurator.Core.Configuration.BLOs
         internal ConfiguratorSession(ConfigurationInstance configurationInstance, List<CustomRule> customRules, SolverContext context)
         {
             this.configurationInstance = configurationInstance;
-            this.configurationInstance.SMTText = context.SMTText;
+            this.configurationInstance.SMTStaticText = context.GetSMTStaticText;
 
 
             this.customRules = customRules;

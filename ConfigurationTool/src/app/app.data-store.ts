@@ -49,7 +49,7 @@ export class AppDataStore {
     }
 
     // Public methods (in use)
-    public ToggleFeatureSelection(featureID: string): Promise<any> {
+    public ToggleFeatureSelection(featureID: string): Promise<ToggleFeatureReturnModel> {
 
         let options = new RequestOptions({ 'headers': this.headers });
 
@@ -88,4 +88,13 @@ export class AppDataStore {
         return promise;
     }
 
+
+    
+    
+}
+
+// Return models
+export class ToggleFeatureReturnModel {
+    public ChangesDictionary: any;
+    public SMTDynamicText: string;
 }

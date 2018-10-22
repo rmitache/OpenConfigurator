@@ -28,8 +28,12 @@
     float: right;
     padding:10px;
     border-radius:5px;
+
 }
 
+    .smt-text-placeholder h2 {
+        margin-top:0;
+    }
 .smt-text-placeholder span {
     font-family:Arial;
     font-size:12px;

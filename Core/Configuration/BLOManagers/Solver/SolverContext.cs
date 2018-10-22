@@ -18,13 +18,27 @@ namespace OpenConfigurator.Core.Configuration.BLOManagers.Solver
         private Dictionary<string, Assumption> _decisionAssumptions = new Dictionary<string, Assumption>();
 
         // Properties
-        public string SMTText
+        public string GetSMTStaticText
         {
             get
             {
                 return this._solver.ToString();
             }
         }
+        public string GetSMTDynamicText
+        {
+            get
+            {
+                string text = "";
+                foreach (Assumption assumption in this._decisionAssumptions.Values)
+                {
+                    text = text + " " + assumption.Expr;
+                }
+
+                return text;
+            }
+        }
+
 
         // Private helper methods
         private static bool? ConvertToBool(Expr value)
