@@ -53,8 +53,16 @@
 
                 // Global key handlers
                 $(document).keydown(function (e) {
-                    if (e.which == 46) { //del key
-                        _this.Delete();
+                    if (e.which == 46 || e.which == 8) { //del key or backspace
+
+                        // Check if a textbox is focused, in which case don't delete the Feature on keypress
+                        var currentFocusedElement = $(":focus")[0];
+                        if (!$(currentFocusedElement).is('input')) {
+                            _this.Delete();
+                        }
+
+
+
                     }
 
                 });
@@ -92,7 +100,7 @@
             this.Delete = function () {
 
                 var selectedCLOs = _cloSelectionManager.GetAllSelectedCLOs();
-                for (var i = 0; i < selectedCLOs.length ; i++) {
+                for (var i = 0; i < selectedCLOs.length; i++) {
                     _dataStore.DeleteByClientID(selectedCLOs[i].GetClientID());
                 }
             }
@@ -109,7 +117,7 @@
                 _dataStore.SaveChanges();
             }
             this.OpenFile = function () {
-                
+
                 // Setup fileExplorer and dialog in which it is shown
                 if (_fileExplorer === null && _fileExplorerDialog === null) {
 
@@ -144,11 +152,11 @@
                     if (selectedCLOArray.length === 0) {
                         _propertyEditor.Close();
                     }
-                        // Single selected
+                    // Single selected
                     else if (selectedCLOArray.length === 1) {
                         _propertyEditor.OpenAndEdit(selectedCLOArray);
                     }
-                        // Multiple selected 
+                    // Multiple selected 
                     else if (selectedCLOArray.length > 1) {
                         //var allCLOsAreSameType = true; // assumption
                         //for (var i = 1; i < selectedCLOArray.length; i++) {
@@ -231,6 +239,13 @@
                     if (!clo.Selected() || Object.size(_selectedCLOs) > 1) {
                         clearSelection();
                         selectCLO(clo); // add to selection
+
+                        // blur any textboxes which might be in focus
+                        var currentFocusedElement = $(":focus")[0];
+                        if (currentFocusedElement) {
+                            $(currentFocusedElement).blur();
+                        }
+
                         raiseEvent = true;
                     }
                 }

@@ -77,10 +77,11 @@
                 // Apply bindings
                 ko.applyBindings(_vm, _innerHtmlElem[0]);
 
+                // BELOW CODE: commented out, was used for default setting focus on Name textbox when selecting a Feature
                 // Select default elem
-                setTimeout(function () {
-                    _innerElems.focusElem.select();
-                }, 0);
+                //setTimeout(function () {
+                    //_innerElems.focusElem.select();
+                //}, 0);
 
                 //
                 $(_innerHtmlElem).find(".iconButton-small").tipTip();
