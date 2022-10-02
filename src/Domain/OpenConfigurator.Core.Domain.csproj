@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <RootNamespace>OpenConfigurator.Domain</RootNamespace>
+        <AssemblyName>OpenConfigurator.Domain</AssemblyName>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="Modeling\Exceptions\" />
+      <Folder Include="Modeling\Events\" />
+    </ItemGroup>
+
+</Project>
