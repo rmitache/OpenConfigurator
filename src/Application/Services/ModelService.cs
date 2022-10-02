@@ -23,11 +23,11 @@ public class ModelService : IModelService
     // Public methods
     public void SaveModel(Model model)
     {
-        // Get the DataEntity
-        XmlDAL.ModelFile.DataEntities.Model dataEntity = Mapper.Map<XmlDAL.ModelFile.DataEntities.Model>(model);
+        //// Get the DataEntity
+        //XmlDAL.ModelFile.DataEntities.Model dataEntity = Mapper.Map<XmlDAL.ModelFile.DataEntities.Model>(model);
 
-        // Save it
-        _modelRepository.SaveModel(dataEntity);
+        //// Save it
+        //_modelRepository.SaveModel(dataEntity);
     }
     
 }
