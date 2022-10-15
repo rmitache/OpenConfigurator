@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Modelling Tool - OpenConfigurator</title>
+
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/jquery-ui.css" asp-append-version="true" />
+
+    <script src="~/js/scripts/frameworks/jquery-2.1.3.js" ></script>
+    <script src="~/js/scripts/frameworks/jquery-ui.js"></script>
+    <script src="~/js/scripts/frameworks/knockout-3.2.0.js"></script>
+    <script src="~/js/scripts/frameworks/raphael.2.1.2.js"></script>
+    <script src="~/js/scripts/frameworks/underscore-min.js"></script>
+
+    <script src="~/js/scripts/plugins/jquery.autogrowtextarea.js"></script>
+    <script src="~/js/scripts/plugins/jquery.blockUI.js"></script>
+    <script src="~/js/scripts/plugins/jquery.guid.js"></script>
+    <script src="~/js/scripts/plugins/jquery.timer.js"></script>
+    <script src="~/js/scripts/plugins/jquery.tipTip.js"></script>
+    <script src="~/js/scripts/plugins/jquery.withinBox.js"></script>
+    <script src="~/js/scripts/plugins/json2.js"></script>
+    <script src="~/js/scripts/plugins/knockout.validation.js"></script>
+    <script src="~/js/scripts/plugins/toastr.js"></script>
+
+    <script src="~/js/scripts/custom-plugins/jquery.simpleMenu.js"></script>
+    <script src="~/js/scripts/custom-plugins/jquery.simpleTree.js"></script>
+
+    <script src="~/js/scripts/framework-extensions/knockout-extensions.js"></script>
+
+    <script src="~/js/scripts/amd/require.js"></script>
+    <script src="~/js/scripts/amd/text.js"></script>
+
+    <script src="~/js/scripts/application/clos.js"></script>
+    <script src="~/js/scripts/application/common.js"></script>
+    <script src="~/js/scripts/application/coreFramework.js"></script>
+    <script src="~/js/scripts/application/enums.js"></script>
+
+</head>
+<body>
+    <div id="frame">
+        <div id="headerArea">
+            <div id="topMenuBar">
+                <div id="logo">
+                </div>
+                <div id="topMenuContainer">
+                </div>
+
+            </div>
+
+        </div>
+        <div id="bodyArea">
+            @RenderBody()
+        </div>
+    </div>
+    @RenderSection("bodyscripts", required: false)
+</body>
+
+</html>

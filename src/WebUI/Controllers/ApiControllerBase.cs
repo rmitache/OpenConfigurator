@@ -1,13 +1,42 @@
 ﻿
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Hosting.Internal;
 
 namespace OpenConfigurator.WebUI.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public abstract class ApiControllerBase : ControllerBase
+public class ApiController : ControllerBase
 {
-    //private ISender _mediator = null!;
+    // Fields
+    private string modelFolderPath = HostingEnvironment.MapPath("~/ModelFiles/");
 
-    //protected ISender Mediator => _mediator ??= HttpContext.RequestServices.GetRequiredService<ISender>();
+
+    [HttpGet]
+    public string CreateNewDefaultBLO()
+    {
+        return "Test";
+    }
+
+    //[HttpPost]
+    //public Model SaveChanges(Model model)
+    //{
+    //    ModelManager manager = new ModelManager(modelFolderPath);
+    //    manager.SaveModel(model);
+    //    return null;
+    //}
+
+    //[HttpGet]
+    //public Model GetModel(string modelName)
+    //{
+    //    ModelManager manager = new ModelManager(modelFolderPath);
+    //    return manager.GetModelByFileNameInFolder(modelName);
+    //}
+
+    //[HttpGet]
+    //public string[] GetAllModelNames()
+    //{
+    //    ModelManager manager = new ModelManager(modelFolderPath);
+    //    return manager.GetAllModelNames();
+    //}
 }

@@ -1,5 +1,4 @@
-﻿using OpenConfigurator.Application.Common.Interfaces;
-using OpenConfigurator.WebUI.Filters;
+﻿using OpenConfigurator.WebUI.Filters;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Mvc;
 using NSwag;
