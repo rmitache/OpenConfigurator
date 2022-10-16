@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using OpenConfigurator.Core.Infrastructure.DataEntities;
-using OpenConfigurator.Domain.Modeling.Entities;
+using OpenConfigurator.Core.Domain.Modeling.Entities;
 using System.Collections.Generic;
 using System.Linq;
-using Attribute = OpenConfigurator.Domain.Modeling.Entities.Attribute;
+using Attribute = OpenConfigurator.Core.Domain.Modeling.Entities.Attribute;
 
 namespace OpenConfigurator.Infrastructure;
 

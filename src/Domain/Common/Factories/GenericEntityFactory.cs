@@ -6,13 +6,14 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenConfigurator.Core.Domain.Common;
 
-namespace OpenConfigurator.Core.Domain.Modeling.Factories;
+namespace OpenConfigurator.Core.Domain.Common.Factories;
 public class GenericEntityFactory: IGenericEntityFactory
 {
-    public GenericEntityFactory()
+    private GenericEntityFactory()
     {
 
     }
+    public static GenericEntityFactory GetInstance () { return new GenericEntityFactory(); }
 
     public BaseEntity? CreateEntityInstance(string entityTypeName, DomainAreas domainArea)
     {

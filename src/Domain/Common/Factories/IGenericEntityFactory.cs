@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenConfigurator.Core.Domain.Common;
 
-namespace OpenConfigurator.Core.Domain.Modeling.Factories;
+namespace OpenConfigurator.Core.Domain.Common.Factories;
 public interface IGenericEntityFactory
 {
     public BaseEntity CreateEntityInstance(string entityTypeName, DomainAreas domainArea);

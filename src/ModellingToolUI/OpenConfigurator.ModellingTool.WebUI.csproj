@@ -40,4 +40,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.10" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\OpenConfigurator.Core.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -7,11 +7,11 @@
             baseUrl: "js/spa/",
             urlArgs: "bust=" + (new Date()).getTime()
         });
-                        //require(["Main/Controller"], function (Controller) {
-                        //    var controller = new Controller();
-                        //    controller.Initialize();
-                        //    controller.NewModel();
-                        //});
+        require(["Main/Controller"], function (Controller) {
+            var controller = new Controller();
+            controller.Initialize();
+            controller.NewModel();
+        });
     </script>
 }
 

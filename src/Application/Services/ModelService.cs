@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenConfigurator.Application.Interfaces;
-using OpenConfigurator.Domain.Modeling.Entities;
+using OpenConfigurator.Core.Domain.Modeling.Entities;
 
 namespace OpenConfigurator.Application.Services;
 public class ModelService : IModelService

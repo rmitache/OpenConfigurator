@@ -40,40 +40,36 @@
                 _menuBar = new MenuBar($("#topMenuContainer"), _dataStore, _this);
                 _menuBar.Initialize();
 
-                // Setup events and handlers
-                _dataStore.ModelLoaded.AddHandler(new EventHandler(_visualView.OnModelLoaded));
-                _dataStore.ModelLoaded.AddHandler(new EventHandler(_modelExplorer.OnModelLoaded));
-                _dataStore.ModelLoaded.AddHandler(new EventHandler(_commandToolbar.OnModelLoaded));
-                _dataStore.ModelUnloaded.AddHandler(new EventHandler(_visualView.OnModelUnloaded));
-                _dataStore.ModelUnloaded.AddHandler(new EventHandler(_modelExplorer.OnModelUnloaded));
-                _dataStore.ModelUnloaded.AddHandler(new EventHandler(_commandToolbar.OnModelUnloaded));
-                _visualView.StateChanged.AddHandler(new EventHandler(_commandToolbar.OnVisualViewStateChanged));
-                _dataStore.CLODeleted.AddHandler(new EventHandler(_cloSelectionManager.OnCLODeleted));
-                _cloSelectionManager.CLOSelectionChanged.AddHandler(new EventHandler(onCLOSelectionChanged));
+                //// Setup events and handlers
+                //_dataStore.ModelLoaded.AddHandler(new EventHandler(_visualView.OnModelLoaded));
+                //_dataStore.ModelLoaded.AddHandler(new EventHandler(_modelExplorer.OnModelLoaded));
+                //_dataStore.ModelLoaded.AddHandler(new EventHandler(_commandToolbar.OnModelLoaded));
+                //_dataStore.ModelUnloaded.AddHandler(new EventHandler(_visualView.OnModelUnloaded));
+                //_dataStore.ModelUnloaded.AddHandler(new EventHandler(_modelExplorer.OnModelUnloaded));
+                //_dataStore.ModelUnloaded.AddHandler(new EventHandler(_commandToolbar.OnModelUnloaded));
+                //_visualView.StateChanged.AddHandler(new EventHandler(_commandToolbar.OnVisualViewStateChanged));
+                //_dataStore.CLODeleted.AddHandler(new EventHandler(_cloSelectionManager.OnCLODeleted));
+                //_cloSelectionManager.CLOSelectionChanged.AddHandler(new EventHandler(onCLOSelectionChanged));
 
-                // Global key handlers
-                $(document).keydown(function (e) {
-                    if (e.which == 46 || e.which == 8) { //del key or backspace
+                //// Global key handlers
+                //$(document).keydown(function (e) {
+                //    if (e.which == 46 || e.which == 8) { //del key or backspace
 
-                        // Check if a textbox is focused, in which case don't delete the Feature on keypress
-                        var currentFocusedElement = $(":focus")[0];
-                        if (!$(currentFocusedElement).is('input')) {
-                            _this.Delete();
-                        }
+                //        // Check if a textbox is focused, in which case don't delete the Feature on keypress
+                //        var currentFocusedElement = $(":focus")[0];
+                //        if (!$(currentFocusedElement).is('input')) {
+                //            _this.Delete();
+                //        }
+                //    }
+                //});
 
-
-
-                    }
-
-                });
-
-                // Other handlers
-                _visualView.Focus.AddHandler(new EventHandler(function () {
-                    onViewFocused(_visualView);
-                }));
-                _modelExplorer.Focus.AddHandler(new EventHandler(function () {
-                    onViewFocused(_modelExplorer);
-                }));
+                //// Other handlers
+                //_visualView.Focus.AddHandler(new EventHandler(function () {
+                //    onViewFocused(_visualView);
+                //}));
+                //_modelExplorer.Focus.AddHandler(new EventHandler(function () {
+                //    onViewFocused(_modelExplorer);
+                //}));
             }
 
             // Public methods

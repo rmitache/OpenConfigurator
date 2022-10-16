@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using OpenConfigurator.Application.Interfaces;
 using OpenConfigurator.Core.Infrastructure.DataEntities;
-using OpenConfigurator.Domain.Modeling.Entities;
+using OpenConfigurator.Core.Domain.Modeling.Entities;
 
 namespace OpenConfigurator.Infrastructure.FilePersistence.Repositories;
 public class ModelFileRepository : IModelRepository

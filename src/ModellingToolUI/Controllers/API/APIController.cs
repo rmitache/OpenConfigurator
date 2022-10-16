@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Hosting.Internal;
+using OpenConfigurator.Core.Domain.Common;
+using OpenConfigurator.Core.Domain.Common.Factories;
 
 namespace ModellingToolUI.Controllers;
 
@@ -23,9 +25,10 @@ public class APIController : Controller
     //}
 
     [HttpGet]
-    public iBLO CreateNewDefaultBLO(string bloTypeName)
+    public BaseEntity? CreateNewDefaultBLO(string entityTypeName)
     {
-        return GenericBLOFactory.GetInstance().CreateBLOInstance(bloTypeName, DomainAreas.Modelling);
+        var newInstance = GenericEntityFactory.GetInstance().CreateEntityInstance(entityTypeName, DomainAreas.Modelling);
+        return newInstance;
     }
 
 }
