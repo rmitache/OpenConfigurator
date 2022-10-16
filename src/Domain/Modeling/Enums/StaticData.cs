@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OpenConfigurator.Domain.Modeling.Enums;
+namespace OpenConfigurator.Core.Domain.Modeling.Enums;
 public static class RelationTypes_Info
 {
     public static class Mandatory

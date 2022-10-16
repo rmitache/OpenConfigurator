@@ -1,6 +1,6 @@
-﻿using OpenConfigurator.Domain.Modeling.Enums;
+﻿using OpenConfigurator.Core.Domain.Common;
 
-namespace OpenConfigurator.Domain.Modeling.Entities;
+namespace OpenConfigurator.Core.Domain.Modeling.Entities;
 
 public class Model : BaseEntity
 {

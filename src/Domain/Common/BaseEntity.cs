@@ -1,5 +1,5 @@
 ﻿
-namespace OpenConfigurator.Domain.Common;
+namespace OpenConfigurator.Core.Domain.Common;
 
 public abstract class BaseEntity
 {

@@ -16,11 +16,16 @@ public class APIController : Controller
         modelFolderPath = System.IO.Path.Combine(_env.WebRootPath, "/ModelFiles/");
     }
 
-    [HttpGet]
-    public string Test()
-    {
-        return "Test";
-    }
+    //[HttpGet]
+    //public string Test()
+    //{
+    //    return "Test";
+    //}
 
+    [HttpGet]
+    public iBLO CreateNewDefaultBLO(string bloTypeName)
+    {
+        return GenericBLOFactory.GetInstance().CreateBLOInstance(bloTypeName, DomainAreas.Modelling);
+    }
 
 }

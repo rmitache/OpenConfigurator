@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace OpenConfigurator.Domain.Modeling.Entities;
+namespace OpenConfigurator.Core.Domain.Modeling.Entities;
 
 public class CustomRule : BaseEntity
 {

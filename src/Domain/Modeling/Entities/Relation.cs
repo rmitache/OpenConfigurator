@@ -1,6 +1,7 @@
-﻿using OpenConfigurator.Domain.Modeling.Enums;
+﻿using OpenConfigurator.Core.Domain.Common;
+using OpenConfigurator.Core.Domain.Modeling.Enums;
 
-namespace OpenConfigurator.Domain.Modeling.Entities;
+namespace OpenConfigurator.Core.Domain.Modeling.Entities;
 
 public class Relation : BaseEntity
 {

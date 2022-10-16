@@ -4,7 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OpenConfigurator.Domain.Modeling.Enums;
+namespace OpenConfigurator.Core.Domain.Common;
+
+// Domain area enums
+public enum DomainAreas
+{
+    Modelling = 0,
+    Configuration = 1
+}
 
 // BLO related Enums
 public enum RelationTypes

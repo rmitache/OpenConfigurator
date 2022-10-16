@@ -1,11 +1,11 @@
-﻿using OpenConfigurator.Domain.Modeling.Enums;
-
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using OpenConfigurator.Core.Domain.Common;
 
-namespace OpenConfigurator.Domain.Modeling.Entities;
+namespace OpenConfigurator.Core.Domain.Modeling.Entities;
 
 public class CompositionRule : BaseEntity
 {

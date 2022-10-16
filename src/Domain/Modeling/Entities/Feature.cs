@@ -1,6 +1,6 @@
 ﻿using OpenConfigurator.Domain.Modeling.Enums;
 
-namespace OpenConfigurator.Domain.Modeling.Entities;
+namespace OpenConfigurator.Core.Domain.Modeling.Entities;
 
 public class Feature : BaseEntity
 {
