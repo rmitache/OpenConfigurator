@@ -1,4 +1,6 @@
 ﻿
+using OpenConfigurator.Core.Domain.Common;
+
 namespace OpenConfigurator.Core.Domain.Modeling.Entities;
 
 public class Feature : BaseEntity

@@ -1,11 +1,17 @@
+using OpenConfigurator.Application;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services
     .AddControllersWithViews()
     .AddRazorRuntimeCompilation();
+builder.Services
+    .AddInfrastructureServices(builder.Configuration)
+    .AddApplicationServices(builder.Configuration);
 
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -31,6 +37,7 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}");
 
 app.MapControllers();
+
 
 
 app.Run();

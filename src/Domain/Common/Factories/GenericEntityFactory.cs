@@ -21,7 +21,7 @@ public class GenericEntityFactory: IGenericEntityFactory
         Assembly assembly = Assembly.GetAssembly(typeof(OpenConfigurator.Core.Domain.Common.BaseEntity));
         string domainAreaName = Enum.GetName(typeof(DomainAreas), domainArea);
 
-        Type entityType = assembly.GetType("OpenConfigurator.Core." + domainAreaName + ".Entities." + entityTypeName);
+        Type entityType = assembly.GetType("OpenConfigurator.Core.Domain." + domainAreaName + ".Entities." + entityTypeName);
         return CreateEntityInstance(entityType);
     }
     public BaseEntity? CreateEntityInstance(Type? entityType)

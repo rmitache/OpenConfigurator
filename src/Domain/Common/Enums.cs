@@ -9,7 +9,7 @@ namespace OpenConfigurator.Core.Domain.Common;
 // Domain area enums
 public enum DomainAreas
 {
-    Modelling = 0,
+    Modeling = 0,
     Configuration = 1
 }
 

@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OpenConfigurator.Core.Domain.Modeling.Entities;
 
 namespace OpenConfigurator.Application.Services;
-interface IModelService
+public interface IModelService
 {
+    void SaveModel(Model model);
+    Model GetModelByFileNameInFolder(string modelName);
 }

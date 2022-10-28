@@ -1,4 +1,5 @@
 ﻿using OpenConfigurator.Core.Domain.Common;
+using OpenConfigurator.Core.Domain.Modeling.Enums;
 
 namespace OpenConfigurator.Core.Domain.Modeling.Entities;
 

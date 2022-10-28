@@ -528,8 +528,8 @@
                 var newDefaultBLO = null;
                 $.ajax({
                     type: "Get",
-                    url: "api/GlobalAPI/CreateNewDefaultBLO",
-                    data: { bloTypeName: bloTypeName },
+                    url: "api/CreateNewDefaultBLO",
+                    data: { entityTypeName: bloTypeName },
                     async: false,
                     success: function (response) {
                         newDefaultBLO = response;
@@ -544,7 +544,7 @@
                 $.ajax({
                     dataType: "json",
                     type: "POST",
-                    url: "api/GlobalAPI/SaveChanges",
+                    url: "api/SaveChanges",
                     data: JSON.stringify(ModelBLO),
                     async: false,
                     success: function (response) {
@@ -558,7 +558,7 @@
                 var blo = null;
                 $.ajax({
                     type: "Get",
-                    url: "api/GlobalAPI/GetModel",
+                    url: "api/GetModel",
                     data: { ModelName: ModelName },
                     async: false,
                     success: function (response) {
@@ -572,7 +572,7 @@
                 var blos = null;
                 $.ajax({
                     type: "Get",
-                    url: "api/GlobalAPI/GetAllModelNames",
+                    url: "api/GetAllModelNames",
                     data: {},
                     async: false,
                     success: function (response) {

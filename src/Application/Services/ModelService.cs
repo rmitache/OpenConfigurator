@@ -14,7 +14,7 @@ public class ModelService : IModelService
 
 
     // Constructor
-    public ModelService(string modelFolderPath, IModelRepository modelRepository)
+    public ModelService(IModelRepository modelRepository)
     {
         this._modelRepository = modelRepository;
     }
@@ -29,5 +29,26 @@ public class ModelService : IModelService
         //// Save it
         //_modelRepository.SaveModel(dataEntity);
     }
-    
+
+    public Model GetModelByFileNameInFolder(string fileName)
+    {
+        // Get DataEntity and convert to BLO
+        var model = _modelRepository.GetModel(fileName);
+
+        return model;
+    }
+
+    //public Model GetModelFromStream(Stream modelFileStream)
+    //{
+    //    // Get DataEntity and convert to BLO
+    //    XmlDAL.ModelFile.DataEntities.Model dataEntity = _modelRepository.GetModel(modelFileStream);
+    //    BLOs.Model modelBLO = Mapper.Map<BLOs.Model>(dataEntity);
+    //    return modelBLO;
+    //}
+    public string[] GetAllModelNames()
+    {
+        // Read files and create BLOs
+        return _modelRepository.GetAllModelNames();
+    }
+
 }
