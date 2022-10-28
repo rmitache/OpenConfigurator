@@ -5,6 +5,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services
     .AddControllersWithViews()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.PropertyNamingPolicy = null;
+    })
     .AddRazorRuntimeCompilation();
 builder.Services
     .AddInfrastructureServices(builder.Configuration)
@@ -24,13 +28,6 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
-//app.UseEndpoints(endpoints =>
-//{
-//    endpoints.MapControllers(); // Map attribute-routed API controllers
-//    endpoints.MapRazorPages();//map razor pages
-//});
-
 
 app.MapControllerRoute(
     name: "default",

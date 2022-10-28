@@ -10,4 +10,5 @@ public interface IModelService
 {
     void SaveModel(Model model);
     Model GetModelByFileNameInFolder(string modelName);
+    string[] GetAllModelNames();
 }

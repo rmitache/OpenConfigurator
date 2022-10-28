@@ -34,23 +34,21 @@ public class APIController : Controller
     [HttpPost]
     public Model SaveChanges(Model model)
     {
-        //ModelService service = new ModelService(_modelFolderPath);
-        //manager.SaveModel(model);
-        //return null;
-        return null;
+        _modelService.SaveModel(model);
+        return model;
     }
 
-    //[HttpGet]
-    //public Model GetModel(string modelName)
-    //{
-    //    ModelManager manager = new ModelManager(modelFolderPath);
-    //    return manager.GetModelByFileNameInFolder(modelName);
-    //}
+    [HttpGet]
+    public Model GetModel(string modelName)
+    {
+        var model = _modelService.GetModelByFileNameInFolder(modelName);
+        return model;
+    }
 
-    //[HttpGet]
-    //public string[] GetAllModelNames()
-    //{
-    //    ModelManager manager = new ModelManager(modelFolderPath);
-    //    return manager.GetAllModelNames();
-    //}
+    [HttpGet]
+    public string[] GetAllModelNames()
+    {
+        var modelNames = _modelService.GetAllModelNames();
+        return modelNames;
+    }
 }
