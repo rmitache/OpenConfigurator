@@ -813,7 +813,7 @@ body
 {
     background: #62605E;
     border: 1px solid #62605E;
-    cursor:move;
+    /*cursor:move;*/
 }
 .dialog .boxHeader .headerLabel
 {
@@ -849,6 +849,14 @@ body
         opacity: .50;
         filter:Alpha(Opacity=50); 
         position:fixed;
+}
+
+.ui-dialog .ui-dialog-titlebar {
+    display:none;
+}
+.ui-widget-content{
+    border:none;
+    background:none;
 }
 
 /*BlockUI*/
