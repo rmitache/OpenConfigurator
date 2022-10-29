@@ -154,7 +154,7 @@
 
             var FromBLO = {
                 Model: function (blo) {
-                    debugger;
+                    
                     // Strip off all child collections from the blo
                     var strippedOffBLOArrays = stripOffChildArrays(blo); // it is assumed all arrays on BLOs are part of BLO Lists
 

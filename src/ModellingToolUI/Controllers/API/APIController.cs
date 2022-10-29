@@ -16,9 +16,10 @@ public class APIController : Controller
     private readonly IWebHostEnvironment _env;
     private readonly IModelService _modelService;
 
-    public APIController(IWebHostEnvironment env)
+    public APIController(IWebHostEnvironment env, IModelService modelService)
     {
         _env = env;
+        _modelService = modelService;
         _modelFolderPath = System.IO.Path.Combine(_env.WebRootPath, "/ModelFiles/");
     }
 

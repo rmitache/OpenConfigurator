@@ -11,14 +11,14 @@
     <div id="AttributesSection">
         <span class="headerLabel">Attributes:</span>
         <div class="iconButton-small" id="newAttributeButton" title="Add a new Attribute" data-bind="click: AddAttribute">
-            <img src="../../Content/Images/Icons/add.png" />
+            <img src="/css/img/Icons/add.png" />
         </div>
         <div id="AttributeListContainer">
             <span id="noDataLabel" data-bind="visible: Attributes().length == 0">There are no Attributes</span>
             <div data-bind="foreach: Attributes">
                 <div class="listElem" data-bind="click: $root.SelectAttribute, attr: { selected: $data === $root.CurrentlySelectedAttribute() }">
                     <span data-bind="text: Name"></span>
-                    <img data-bind="click: $root.RemoveAttribute" src="../../Content/Images/Icons/delete.png" />
+                    <img data-bind="click: $root.RemoveAttribute" src="/css/img/Icons/delete.png" />
                 </div>
             </div>
         </div>

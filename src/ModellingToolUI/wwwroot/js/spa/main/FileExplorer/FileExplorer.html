@@ -6,7 +6,6 @@
             <div data-bind="foreach: ModelFilesCollection">
                 <div class="listElem" data-bind="click: $root.SelectModelFile, attr: { selected: $data === $root.CurrentlySelectedModelFile() }">
                     <span data-bind="text: $data"></span>
-                   <!-- @*<img data-bind="click: $root.RemoveModelFile" src="../../Content/Images/Icons/delete.png" />*@-->
                 </div>
             </div>
 

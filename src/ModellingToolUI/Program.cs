@@ -1,3 +1,4 @@
+using System.Reflection;
 using OpenConfigurator.Application;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +11,8 @@ builder.Services
         options.JsonSerializerOptions.PropertyNamingPolicy = null;
     })
     .AddRazorRuntimeCompilation();
+
+
 builder.Services
     .AddInfrastructureServices(builder.Configuration)
     .AddApplicationServices(builder.Configuration);
