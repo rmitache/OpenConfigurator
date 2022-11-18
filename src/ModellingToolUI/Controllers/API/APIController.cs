@@ -12,7 +12,7 @@ namespace ModellingToolUI.Controllers;
 
 public class APIController : Controller
 {
-    private readonly string _modelFolderPath;
+    //private readonly string _modelFolderPath;
     private readonly IWebHostEnvironment _env;
     private readonly IModelService _modelService;
 
@@ -20,7 +20,7 @@ public class APIController : Controller
     {
         _env = env;
         _modelService = modelService;
-        _modelFolderPath = System.IO.Path.Combine(_env.WebRootPath, "/ModelFiles/");
+        //_modelFolderPath = System.IO.Path.Combine(_env.WebRootPath, "/ModelFiles/");
     }
 
    
@@ -33,7 +33,7 @@ public class APIController : Controller
     }
 
     [HttpPost]
-    public Model SaveChanges(Model model)
+    public Model SaveChanges([FromBody] Model model)
     {
         _modelService.SaveModel(model);
         return model;

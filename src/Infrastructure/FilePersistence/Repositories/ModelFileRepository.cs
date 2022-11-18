@@ -37,7 +37,7 @@ public class ModelFileRepository : IModelRepository
     public Model GetModel(string featureModelName)
     {
         Model dataEntity;
-        using (FileStream reader = new FileStream(_modelFolderPath + featureModelName + ".xml", FileMode.Open, FileAccess.Read))
+        using (FileStream reader = new FileStream(_modelFolderPath + "\\" + featureModelName + ".xml", FileMode.Open, FileAccess.Read))
         {
             DataContractSerializer ser = new DataContractSerializer(typeof(Model));
             dataEntity = (Model)ser.ReadObject(reader);
@@ -53,10 +53,10 @@ public class ModelFileRepository : IModelRepository
         var dataEntity = _mapper.Map<ModelDE>(model);
 
         // Write the file
-        using (FileStream writer = new FileStream(_modelFolderPath + model.Name + ".xml", FileMode.Create, FileAccess.Write))
+        using (FileStream writer = new FileStream(_modelFolderPath + "\\" + model.Name + ".xml", FileMode.Create, FileAccess.Write))
         {
-            DataContractSerializer ser = new DataContractSerializer(typeof(Model));
-            ser.WriteObject(writer, model);
+            DataContractSerializer ser = new DataContractSerializer(typeof(ModelDE));
+            ser.WriteObject(writer, dataEntity);
         }
 
     }

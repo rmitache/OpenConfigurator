@@ -540,9 +540,10 @@
             }
             this.SaveChanges = function (ModelBLO) {
 
+                
                 var newDefaultBLO = null;
                 $.ajax({
-                    dataType: "json",
+                    dataType: "application/json",
                     type: "POST",
                     url: "api/SaveChanges",
                     data: JSON.stringify(ModelBLO),
