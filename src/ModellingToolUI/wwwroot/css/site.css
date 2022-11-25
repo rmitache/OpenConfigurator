@@ -112,16 +112,16 @@ body
 {
     float: left;
 }
-#toolBar .Textbox
-{
-    float: left;
-    margin-left:15px;
-    margin-top:2px;
-    padding-left:10px;
-    font-size:14px;
-    font-weight:bold;
-    width:220px;
-}
+    #toolBar .Textbox {
+        float: left;
+        margin-left: 15px;
+        margin-right: 15px;
+        margin-top: 2px;
+        padding-left: 10px;
+        font-size: 14px;
+        font-weight: bold;
+        width: 220px;
+    }
 #toolBar #centerItemsArea
 {
     width:210px;

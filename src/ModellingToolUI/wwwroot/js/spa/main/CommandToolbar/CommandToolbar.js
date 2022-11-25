@@ -14,7 +14,8 @@
                 fileCommandItems: {
                     newModelItem: null,
                     openModelItem: null,
-                    saveModelItem: null
+                    saveModelItem: null,
+                    runConfigurationItem: null
                 },
                 modelManipulationItems: {
                     newFeatureItem: null,
@@ -62,11 +63,14 @@
                 _innerElems.fileCommandItems.newModelItem = $(_innerHtmlElem).find("#newModelItem");
                 _innerElems.fileCommandItems.openModelItem = $(_innerHtmlElem).find("#openModelItem");
                 _innerElems.fileCommandItems.saveModelItem = $(_innerHtmlElem).find("#saveModelItem");
+                _innerElems.fileCommandItems.runConfigurationItem = $(_innerHtmlElem).find("#runConfigurationItem");
+                
                 _innerElems.modelManipulationItems.newFeatureItem = $(_innerHtmlElem).find("#newFeatureItem");
                 _innerElems.modelManipulationItems.newRelationItem = $(_innerHtmlElem).find("#newRelationItem");
                 _innerElems.modelManipulationItems.newGroupRelationItem = $(_innerHtmlElem).find("#newGroupRelationItem");
                 _innerElems.modelManipulationItems.newCompositionRuleItem = $(_innerHtmlElem).find("#newCompositionRuleItem");
                 _innerElems.modelManipulationItems.newCustomRuleItem = $(_innerHtmlElem).find("#newCustomRuleItem");
+
                 _innerElems.visualOptionsItems.zoomInItem = $(_innerHtmlElem).find("#zoomInItem");
                 _innerElems.visualOptionsItems.zoomOutItem = $(_innerHtmlElem).find("#zoomOutItem");
                 _innerElems.visualOptionsItems.toggleOrientationItem = $(_innerHtmlElem).find("#toggleOrientationItem");
