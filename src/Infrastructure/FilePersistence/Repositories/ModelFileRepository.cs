@@ -36,11 +36,11 @@ public class ModelFileRepository : IModelRepository
 
     public Model GetModel(string featureModelName)
     {
-        Model dataEntity;
+        ModelDE dataEntity;
         using (FileStream reader = new FileStream(_modelFolderPath + "\\" + featureModelName + ".xml", FileMode.Open, FileAccess.Read))
         {
-            DataContractSerializer ser = new DataContractSerializer(typeof(Model));
-            dataEntity = (Model)ser.ReadObject(reader);
+            DataContractSerializer ser = new DataContractSerializer(typeof(ModelDE));
+            dataEntity = (ModelDE)ser.ReadObject(reader);
         }
 
         var model = _mapper.Map<Model>(dataEntity);
